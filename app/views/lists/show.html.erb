@@ -1,0 +1,10 @@
+
+
+  <% @list.bookmarks.each do |bookmark|%>
+    <li><%= bookmark.comment %> <%= link_to "delete", bookmark_path, data: {turbo_method: :delete, turbo_confirm: "Are your sure?"}  %> </li>
+    <li><%= bookmark.movie.title %></li>
+  <% end %>
+
+    <%= link_to "Back to the lists", lists_path, class: "btn btn-primary mx-4"%>
+    <%= link_to "Create a new bookmark", new_list_bookmark_path(@list), class: "btn btn-primary mx-4"%>
+    <%# <%= link_to "Delete this bookmark", bookmark_path(@list), method: :destroy, class: "btn btn-primary mx-4"%> %>
